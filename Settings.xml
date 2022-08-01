@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MitigationPolicy>
+  <SystemConfig>
+    <DEP Enable="true" EmulateAtlThunks="false" />
+    <ASLR ForceRelocateImages="true" RequireInfo="false" />
+    <ControlFlowGuard Enable="true" SuppressExports="false" />
+  </SystemConfig>
+  <AppConfig Executable="C:\Users\laila\Downloads\BingWallpaper.exe">
+    <DEP Enable="true" EmulateAtlThunks="false" />
+    <ASLR ForceRelocateImages="true" RequireInfo="true" BottomUp="true" HighEntropy="false" />
+    <StrictHandle Enable="true" />
+    <SystemCalls DisableWin32kSystemCalls="true" Audit="false" />
+    <ExtensionPoints DisableExtensionPoints="true" />
+    <DynamicCode BlockDynamicCode="true" AllowThreadsToOptOut="true" Audit="false" />
+    <ControlFlowGuard Enable="true" SuppressExports="false" />
+    <SignedBinaries MicrosoftSignedOnly="true" AllowStoreSignedBinaries="true" Audit="false" AuditStoreSigned="false" EnforceModuleDependencySigning="false" />
+    <Fonts DisableNonSystemFonts="false" AuditOnly="false" Audit="true" />
+    <ImageLoad BlockRemoteImageLoads="false" AuditRemoteImageLoads="true" BlockLowLabelImageLoads="false" AuditLowLabelImageLoads="true" />
+    <Payload EnableExportAddressFilter="false" AuditEnableExportAddressFilter="true" EnableImportAddressFilter="false" AuditEnableImportAddressFilter="true" EnableRopStackPivot="false" AuditEnableRopStackPivot="true" EnableRopCallerCheck="false" AuditEnableRopCallerCheck="true" EnableRopSimExec="false" AuditEnableRopSimExec="true" />
+    <SEHOP Enable="true" TelemetryOnly="false" />
+    <Heap TerminateOnError="true" />
+    <ChildProcess DisallowChildProcessCreation="true" Audit="false" />
+    <UserShadowStack UserShadowStack="false" UserShadowStackStrictMode="false" AuditUserShadowStack="true" />
+  </AppConfig>
+  <AppConfig Executable="MsSense.exe">
+    <StrictHandle Enable="true" />
+    <SEHOP Enable="true" TelemetryOnly="false" />
+  </AppConfig>
+</MitigationPolicy>
